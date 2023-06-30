@@ -1,41 +1,40 @@
 body {
-    line-height: 1.75;
-    color: black;
-    padding-top: 70px;
+    line-height: 2;
+    padding-top: 65px;
 }
 
-/* Styling for Navigation Bar on Top-Screen */
 .topnav {
-    background-color: #fcfcfc;
-    overflow: hidden;
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 50px;
+    left: 50%;
+    /* Set the horizontal position to the middle of the screen */
+    transform: translateX(-50%);
+    /* Move the navbar back by half of its width */
+    width: auto;
+    /* Remove the fixed width */
+    height: 55px;
     z-index: 10;
 }
 
-/* Links inside the navbar */
 .topnav a {
-    float: left;
-    color: #000000;
+    display: inline-block;
+    /* Display the links in a row */
+    color: #807979;
     text-align: center;
-    padding: 14px 16px;
+    padding: 30px 25px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .header {
     text-align: center;
-    color: dodgerblue;
 }
 
 #homePage {
-    padding: 210px 0;
+    padding: 250px 0;
 }
 
 #aboutPage {
-    text-align: center;
     padding: 20px 0;
 }
 
@@ -48,13 +47,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 25%;
-
 }
 
 .description {
-    padding-left: 250px;
-    padding-right: 250px;
-    font-size: 15px;
+    padding-left: 230px;
+    padding-right: 230px;
+    font-size: 14.5px;
     text-align: justify;
 }
 
@@ -64,11 +62,16 @@ body {
 
 .image-container img {
     display: inline-block;
-    max-width: 30%;
+    max-width: 35%;
     height: auto;
 }
 
 .subheading {
-    font-size: large;
-    color: tomato
+    font-size: 17px;
+    font-style: italic;
+    color: rgb(240, 50, 50)
+}
+
+#darker {
+    color: #777070;
 }
