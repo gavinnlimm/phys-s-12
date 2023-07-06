@@ -13,8 +13,8 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="weekone.html">Final Project</a>
-        <a href="weektwo.html">Week 1</a>
-        <a href="weekthree.html">Week 2 & 3</a>
+        <a href="weektwo.html">Week 2</a>
+        <a href="weekthree.html">Week 3 & 4</a>
     </div>
 
     <div class="header" id="aboutPage">
@@ -45,12 +45,15 @@
 
         <p class="subheading">
             Design Phase (Fusion360):
-        </p>    
-        <p>
-            First, I created a 2D design of one of the hands of the shape. I then utilized the circular pattern tool to create 10 other hands around the center of the shape.
-            After creating all of these shapes, I used the combine tool to fused all of these shapes into one.
-            Here is how I designed the shape in Fusion 360:
         </p>
+        <p>
+            To create the shape, I started by designing a 2D hand shape. Using Fusion 360, I utilized the circular
+            pattern tool to replicate the hand shape around the center, creating a total of 10 hands. After completing
+            the duplication process, I employed the combine tool to merge all of these
+            individual hand shapes into a single cohesive shape.
+        </p>
+
+        <br>
 
         <div class="image-container">
             <img src="SS/ss22.png">
@@ -61,25 +64,109 @@
 
         <br><br>
 
-        <p class="subheading">
+        <p class="subheading" id="center">
             Laser Cutting Phase:
-        </p>    
-
-        <p>
-            With this model and a medium of scrap plywood, I laser cutted these shapes.
         </p>
 
         <div class="image-container">
             <img src="SS/ss26.png">
-            <img src="SS/ss27.png">
+            <img src="SS/ss28.JPG">
+        </div>
+
+        <br>
+
+        <p>
+            After designing the 2D model of the shape, I implemented this onto the laser cutter using a medium of
+            plywood. I also then used a hand drill to create a small hole (with the same size as the wooden rod) in the
+            center of the shape.
+            Furthermore, I also attached a wooden rod to the end of one of the axles on the motor. This was because the
+            motor's original axle was too short to fully fit through the hole of the shape that I designed.
+            Using a heat shrink tube, I connected a wooden rod to the end of one of the motors.
+
+        <div class="image-container">
+            <img src="SS/ss29.JPG">
+            <img src="SS/ss30.JPG">
+        </div>
+
+        <br>
+
+        <p>
+            The next step was to create a running motor which would have an axle that would go through the hole of the
+            shape. Using an arduino (micro-controller), I programmed a sequence which would use a potentiometer to
+            control the speed of a specific motor. Above is a picture of my setup and below the Arduino code I used to
+            control the potentiometer and the motor.
+        </p>
+
+        <!-- citation start -->
+
+        <div class="code-section">
+            <pre>
+              <code>
+                /*  
+                   Code to run motor in one direction based on potentiometer reading.
+                   Motor driver speed control on pin 3 (direction LOW by default).
+                   Potentiometer plugged into A0, A2, and A4 on Arduino Uno (or similar).
+                */
+          
+                // Setup function runs once when the Arduino is powered on or reset
+                void setup() {
+                  // Set pin modes for motor control and potentiometer connections
+                  pinMode(3, OUTPUT);        // Motor driver speed control pin
+                  pinMode(A0, OUTPUT);       // GND connection for the potentiometer
+                  pinMode(A4, OUTPUT);       // 3.3V connection for the potentiometer
+          
+                  // Set initial states for potentiometer connections
+                  digitalWrite(A0, LOW);     // Set GND to LOW
+                  digitalWrite(A4, HIGH);    // Set 3.3V to HIGH
+                }
+          
+                // Loop function continuously runs after the setup function
+                void loop() {
+                  // Read the potentiometer value from the wiper on A2
+                  int pot_value = analogRead(A2);
+                  
+                  // Map the potentiometer value to the motor speed range (0-255)
+                  int motor_speed = map(pot_value, 0, 1023, 255, 0);
+          
+                  // Set the motor speed using PWM on pin 3
+                  analogWrite(3, motor_speed);
+          
+                  // Small delay to stabilize motor speed
+                  delay(1);
+                }
+              </code>
+            </pre>
+        </div>
+
+
+        <!-- end of citation -->
+
+        <br>
+
+        <p>
+            After completing the rotating object, I needed to create a structural base for the kinetic sculpture. What I
+            initially planned was to create a box that would hold all of the components of the sculpture in place.
+            Thus, with my knowledge in press-fit models, I constructed a box on Fusion360, and printed it out. Here is
+            how it came out:
+        </p>
+
+        <div class="image-container">
+            <img src="SS/ss32.png">
+            <img src="SS/ss33.png">
+        </div>
+
+        <p class="subheading" id="center"> Final Product: </p>
+
+        <div class="image-container">
+            <img src="SS/ss34.gif">
+            <img src="SS/ss35.gif">
         </div>
 
         <p>
-            The next step was to create a running motor which would have an axle that would go through the hole of the 
+            Limitations and Thoughts:
         </p>
 
     </div>
-
 
 </body>
 
@@ -90,7 +177,6 @@
 <!-- 
 
     Assignment:
-1. Create a kinetic sculpture. (Include circuitry to move your sculpture)
 2. Use a multimeter to measure the voltages in your circuit. Use Ohm's law to calculate current through the circuit.
 3. Gif of kinetic sculpture
 
