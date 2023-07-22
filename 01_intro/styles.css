@@ -1,43 +1,43 @@
 body {
     line-height: 2.5;
-    padding-top: 65px;
+    padding-top: 75px;
 }
 
 .topnav {
     position: fixed;
     top: 0;
-    left: 50%;
-    /* Set the horizontal position to the middle of the screen */
-    transform: translateX(-50%);
-    /* Move the navbar back by half of its width */
-    width: auto;
-    /* Remove the fixed width */
-    height: 55px;
+    left: 0;
+    width: 100%;
+    height: 70px;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .topnav a {
     display: inline-block;
-    /* Display the links in a row */
-    color: #807979;
+    color: #333;
     text-align: center;
-    padding: 30px 20px;
+    padding: 15px 20px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+    white-space: nowrap;
+    /* Prevent the buttons from wrapping to the next line */
+}
+.topnav a:hover {
+    color: #ff0000; /* Change the text color on hover */
 }
 
-.header {
+.center {
     text-align: center;
 }
 
 #homePage {
-    padding: 250px 0;
+    padding: 240px 0;
 }
-
 #aboutPage {
     padding: 20px 0;
 }
-
 #center {
     text-align: center;
 }
@@ -46,20 +46,19 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
+    width: 30%;
 }
 
 .description {
     padding-left: 230px;
     padding-right: 230px;
-    font-size: 14.5px;
+    font-size: 15px;
     text-align: justify;
 }
 
 .image-container {
     text-align: center;
 }
-
 .image-container img {
     display: inline-block;
     max-width: 37%;
@@ -67,9 +66,13 @@ body {
 }
 
 .subheading {
-    font-size: 17px;
+    font-size: 18px;
     font-style: italic;
     color: rgb(240, 50, 50)
+}
+
+.heading {
+    font-size: 50px;
 }
 
 #darker {
@@ -83,7 +86,25 @@ body {
     font-family: Consolas, monospace;
     line-height: 1.5;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 900px;
+}
+
+
+/* Style buttons */
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 17px;
   }
   
-  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+
+  #title {
+    font-size: 60px;
+  }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Gavin Lim's Portfolio - PHYS-S12 Intro to Digital Fabrication</title>
+    <title>Week 5 | Gavin Lim </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -16,21 +16,17 @@
         <a href="weektwo.html">Week 2</a>
         <a href="weekthree.html">Week 3 & 4</a>
         <a href="weekfive.html">Week 5</a>
+        <a href="weeksix.html">Week 6</a>
+        <a href="weekseven.html">Week 7</a>
+        <a href="weekeight.html">Week 8</a>
+        <a href="weeknine.html">Week 9</a>
     </div>
 
-    <!-- Assignment:
-Scan something using the RevoPoint scanner or a photogrammetry application.
-
-Update your website with more information about your final project, including a bill of materials, timeline, and project goals. -->
-
-    <div class="header" id="aboutPage">
-        <h1> <em><b>3D Design / Printing & Scanning</b></em> </h1>
+    <div class="center" id="aboutPage">
+        <h1> <b>3D Design / Printing & Scanning</b> </h1>
     </div>
 
     <div class="description">
-        <p class="subheading">
-            1. 3D Printing
-        </p>
         <p>
             Throughout the 5th week, we learned how to use 3D modeling machines such as the 3D printer.
             In particular, we learned how to implement Fusion360 files into applications such as PrusaSlicer, to create
@@ -40,71 +36,113 @@ Update your website with more information about your final project, including a 
         </p>
 
         <p class="subheading">
-            Design Process: Lego Block
+            1. 3D Printing
         </p>
 
-        <a download href='SS/gavinlegoblock.gcode' id="center"> Gavin's Lego Block Gcode </a>
+        <p class="subheading">
+            Design: Lego Block
+        </p>
 
         <p>
             I tried to replicate the design of a Lego Block. I first started the design by creating a 2D rectangle and
             then extruding it to the dimensions of a lego block (0.6" x 2.5" x 0.5"). After creating the flat plane of
-            the design, I then used the circle to create on of the circles on the top of the lego block. Using the
-            rectangular pattern tool I added 7 more circles to the flat plane to create the 2x8 lego block. After this,
-            I extruded the circles on the top so that they would stick out. Furthermore, I used the fillet tool on the
-            brims of the circles to give it a more realistic look. In addition, I then used the hollow tool to make the
-            inside of the lego block hollow.
+            the design, I then used the circle to create on of the circles on the top of the lego block.
         </p>
+    </div>
 
-        <br>
+    <br>
 
-        <div class="image-container">
-            <img src="SS/ss36.png">
-            <img src="SS/ss37.png">
-            <img src="SS/ss38.png">
-            <img src="SS/ss39.png">
-        </div>
+    <div class="image-container">
+        <img src="SS/ss36.png">
+        <img src="SS/ss37.png">
+    </div>
 
-        <br>
+    <br>
 
-        <p>
-            After fully designing the 3D model of the lego block, I saved the Fusion360 file as a mesh, and then
-            implemented the model on towards PrusaSlicer. Before slicing the 3D model of the lego block, I created a
-            support structure in the base of model. The reason for this was because the model was hollow in the middle;
-            without the use of support structures, the 3D print would have malfunctioned due to a lack of solid
-            structure.
-        </p>
+    <p class="description">
+        Using the
+        rectangular pattern tool I added 7 more circles to the flat plane to create the 2x8 lego block. After this,
+        I extruded the circles on the top so that they would stick out. Furthermore, I used the fillet tool on the
+        brims of the circles to give it a more realistic look. In addition, I then used the hollow tool to make the
+        inside of the lego block hollow.
+    </p>
 
-        <p class="subheading">
-            Printing Results:
-        </p>
+    <br>
 
-        <div class="image-container">
-            <img src="SS/ss40.JPG">
-            <img src="SS/ss41.JPG">
-        </div>
+    <div class="image-container">
+        <img src="SS/ss38.png">
+        <img src="SS/ss39.png">
+    </div>
 
-        <br>
+    <br>
 
-        <p class="subheading">
-            2. 3D Scanning
-        </p>
+    <p class="description">
+        After fully designing the 3D model of the lego block, I saved the Fusion360 file as a mesh, and then
+        implemented the model on towards PrusaSlicer. Before slicing the 3D model of the lego block, I created a
+        support structure in the base of model. The reason for this was because the model was hollow in the middle;
+        without the use of support structures, the 3D print would have malfunctioned due to a lack of solid
+        structure.
+    </p>
 
-        <a download href='SS/GavinScannedHead_fuse.obj' id="center"> Scanned Sculpture </a>
+    <!-- Modified from W3Schools -->
 
-        <p>
-            Using the RevoPoint Scanner, I managed to scan a sculpture that I found within the lab. Here are a couple of pictures of the sculpture before the scan:
-        </p>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <div class="image-container">
-            <img src="SS/ss42.JPG">
-            <img src="SS/ss43.JPG">
-            <img src="SS/ss44.JPG">
-            <img src="SS/ss45.JPG">
-        </div>
+    <div id="center">
+        <a href="SS/gavinlegoblock.gcode" download>
+            <button class="btn"><i class="fa fa-download"></i> Lego Block Download </button>
+        </a>
+    </div>
+
+    <!-- End of citation -->
+
+    <br>
+
+    <p class="subheading" id="center">
+        Printing Results:
+    </p>
+
+    <div class="image-container">
+        <img src="SS/ss40.JPG">
+        <img src="SS/ss41.JPG">
+    </div>
+
+    <br>
+
+    <p class="subheading">
+        2. 3D Scanning
+    </p>
+
+    <p>
+        Another part of this week's assignment was to use a photogrammetry application or a scanner to scan an object
+        within the lab to retreive a 3D model of it.
+        Using the RevoPoint Scanner, I managed to scan a sculpture that I found within the lab. Here are a couple of
+        pictures of the sculpture before the scan:
+    </p>
+
+    <!-- Modified from W3Schools -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div id="center">
+        <a href="SS/GavinScannedHead_fuse.obj" download>
+            <button class="btn"><i class="fa fa-download"></i> Scanned Sculpture Download </button>
+        </a>
+    </div>
+
+    <!-- End of citation -->
+
+    <br>
+
+    <div class="image-container">
+        <img src="SS/ss42.JPG">
+        <img src="SS/ss43.JPG">
+        <img src="SS/ss44.JPG">
+        <img src="SS/ss45.JPG">
+    </div>
 
     </div>
 
 </body>
 
 </html>
-

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Week 6 | Gavin Lim </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="weekone.html">Final Project</a>
+        <a href="weektwo.html">Week 2</a>
+        <a href="weekthree.html">Week 3 & 4</a>
+        <a href="weekfive.html">Week 5</a>
+        <a href="weeksix.html">Week 6</a>
+        <a href="weekseven.html">Week 7</a>
+        <a href="weekeight.html">Week 8</a>
+        <a href="weeknine.html">Week 9</a>
+    </div>
+
+    <!-- Assignment:
+1. Use a sensor to measure a physical quantity with your microcontroller. Calibrate your sensor (describe the range between its min and max values, and whether/how you can control this range). Show data in the form of a table or graph.
+2. Do the same as (1) with a capacitive sensor you have fabricated yourself using copper tape, aluminum foil, Velostat, etc. -->
+
+    <div class="center" id="aboutPage">
+        <h1> <b>Electronic Input Devices</b> </h1>
+    </div>
+
+    <div class="description">
+
+        <p>
+            Throughout this week, we were taught how to build specific circuits, and implement different types of
+            resistors to manipulate the circuit to measure a specific value. Some of the resistors that we explored
+            included thermistors for temperature changes, force-sensitive resistors for pressure/force detection,
+            phototransistors/photresistors for light detection, and accelerometers for motion.
+
+        </p>
+
+        <p class="subheading">
+            1. Photoresistor Circuit
+        </p>
+
+        <p>
+
+        </p>
+
+        <p>
+            So, for the first assignment, we were tasked to use a given sensor to measure a physical quantity using the
+            microcontroller (Arduino Uno). The picture on the bottom left depicts the circuit model that I followed, and
+            the picture on the bottom right shows how I implemented this model onto an Arduino.
+        </p>
+
+        <div class="image-container">
+            <img src="SS/ss46.JPG">
+            <img src="SS/ss47.JPG">
+        </div>
+
+        <br>
+
+        <p>
+            After completing the circuitry, I installed a program into the Arduino that detects the change in resistance
+            within the circuit. The reason for this is because the photoresistor within the circuit changes its
+            resistance as a function of light. As it receives more light its resistance decreases, and the voltage at
+            the point labeled A0 decreases. Below is the code that I used for this:
+        </p>
+
+        <br>
+
+        <div class="code-section">
+            <pre>
+              <code>
+                /*
+                  AnalogReadSerial
+          
+                  Reads an analog input on pin 0, prints the result to the Serial Monitor.
+                  Graphical representation is available using Serial Plotter (Tools > Serial Plotter menu).
+                  Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.
+          
+                  This example code is in the public domain.
+          
+                  https://www.arduino.cc/en/Tutorial/BuiltInExamples/AnalogReadSerial
+                */
+          
+                // the setup routine runs once when you press reset:
+                void setup() {
+                  // initialize serial communication at 9600 bits per second:
+                  Serial.begin(9600);
+                }
+          
+                // the loop routine runs over and over again forever:
+                void loop() {
+                  // read the input on analog pin 0:
+                  int sensorValue = analogRead(A0);
+                  // print out the value you read:
+                  Serial.println(sensorValue);
+                  delay(1);  // delay in between reads for stability
+                }
+              </code>
+            </pre>
+        </div>
+
+        <br>
+
+        <p class="subheading" id="center"> Below are two videos of the photoresistor working:</p>
+
+        <div class="image-container">
+            <img src="SS/photoresist1gif.gif">
+            <img src="SS/photoresist2gif.gif">
+        </div>
+
+        <br>
+
+        <p>
+            Through this experiment, I discovered that the minimum value that was recorded by the photoresistor was
+            zero, and that the maximum was somewhat approximately 450 (with the iPhone flashlight directly on the top of
+            the photoresistor).
+        </p>
+
+        <br>
+
+        <p class="subheading">
+            2. Capacitive Sensor
+        </p>
+
+        <p>
+            Another part of this week's assignment was to create a capacitive sensor. In my case, I created a circuit
+            that uses two metallic sheets to vary the amount of voltage/current that is passing through the circuit.
+        </p>
+
+        <div class="image-container">
+            <img src="SS/ss48.JPG">
+            <img src="SS/capacitivesensor.gif">
+        </div>
+
+        <br>
+
+        <p>
+            Here was the code that I implemented into the Arduino Uno:
+        </p>
+
+        <div class="code-section">
+            <pre>
+                <code>
+                    long result;   // variable for the result of the tx_rx measurement.
+                    int analog_pin = A3;
+                    int tx_pin = 4;
+        
+                    void setup() {
+                        pinMode(tx_pin, OUTPUT);      // Pin 4 provides the voltage step
+                        Serial.begin(9600);
+                    }
+        
+                    void loop() {
+                        result = tx_rx();
+                        Serial.println(result);
+                    }
+        
+        
+                    long tx_rx() {
+                        // Function to execute rx_tx algorithm and return a value
+                        // that depends on the coupling of two electrodes.
+                        // Value returned is a long integer.
+                        int read_high;
+                        int read_low;
+                        int diff;
+                        long int sum;
+                        int N_samples = 100;    // Number of samples to take.  Larger number slows it down, but reduces scatter.
+        
+                        sum = 0;
+        
+                        for (int i = 0; i < N_samples; i++) {
+                            digitalWrite(tx_pin, HIGH);              // Step the voltage high on conductor 1.
+                            read_high = analogRead(analog_pin);     // Measure response of conductor 2.
+                            delayMicroseconds(100);                 // Delay to reach steady state.
+                            digitalWrite(tx_pin, LOW);               // Step the voltage to zero on conductor 1.
+                            read_low = analogRead(analog_pin);      // Measure response of conductor 2.
+                            diff = read_high - read_low;            // desired answer is the difference between high and low.
+                            sum += diff;                            // Sums up N_samples of these measurements.
+                        }
+                        return sum;
+                    }
+                </code>
+            </pre>
+        </div>
+    </div>
+
+</body>
+
+</html>
