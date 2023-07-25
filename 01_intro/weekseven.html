@@ -5,11 +5,11 @@
     <title>Week 7 | Gavin Lim </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="weekone.html">Final Project</a>
@@ -23,41 +23,183 @@
     </div>
 
     <div class="center" id="aboutPage">
-        <h1> <b>Electronic Output Devices</b> </h1>
+        <h1>Electronic Output Devices</h1>
     </div>
 
     <div class="description">
         <p>
-            In week 7 of our class, we delved into an exciting array of topics related to electronics and
-            microcontrollers.
-            The week began with a thorough review of our previous assignments, offering valuable feedback and addressing
-            any
-            questions raised by the students. We then dived into a Servo Motor Workshop, where we learned how to control
-            these precise motors using microcontrollers like the ESP32. Another significant aspect of our learning was
-            understanding the use of an oscilloscope, a crucial tool in electronics, to visualize electrical signals
-            effectively. During a well-deserved break, we utilized our time to install essential drivers for ESP32
-            and/or
-            ESP32-CAM microcontrollers. However, the highlight of the week was the Output Device Extravaganza, where we
-            got
-            hands-on experience choosing from various output devices, including RGB LEDs, LED Strips, OLED/TFT displays,
-            Piezo Buzzers, and even EMF devices like solenoids. Through these practical exercises, we honed our skills
-            in
-            interfacing, circuit control, and programming, enabling us to create intriguing projects with the
-            microcontrollers and other electronic components.
+            During week 7, we delved into an exciting array of subjects within the world of microcontrollers.
+            First, we learned how to operate a Servo Motor, and manipulate programs within microcontrollers such as an
+            ESP32 to control these motors.
+            Then, we dove deeper into the many different output devices that were available within the lab. For instance
+            we learned how to operate RGB/LED strips, and manipulate the color within these individual channel. We also
+            looked into the use of OLED/TFT displays, and changing programs to display different things on the screens.
+            Furthermore,
+            In addition, we also learned how to use an oscilloscope, to visualize
+            electrical signals effectively.
+        </p>
+
+        <br>
+
+        <p id="center" >
+            <b>Assignment:</b> To create a circuit that integrates at least one input device and
+            one output device.
+        </p>
+
+        <br>
+
+        <p id="center">
+            <em>
+                I found all of these output devices interesting to use, but I was most interested in the Piezo Buzzer.
+            </em>
+        </p>
+
+        <br>
+
+        <p class="subheading">
+            1. Arduino-Based Musical Circuit w/ Piezo Buzzer
         </p>
 
         <p>
-            Throughout this class, we were assigned to create a circuit that integrates at least one input device and
-            one output device. Thus, I first tried to create a circuit that 
+            In order to create the circuit...
+            On the bottom left is a model of the circuit that I followed to produce output from the Piezo Buzzer. On the
+            bottom left is a picture of the actual Arduino setup.
         </p>
     </div>
 
+    <br><br>
 
-    <!-- 
-Use an output device that you haven't used before today.
-Write a microcontroller program that integrates at least one input device and one output device. Avoid the delay() function and use the C++ class structure.
-Use an oscilloscope to discover the time domain at which your output device is operating. Is it on a fixed clock? What's its speed? Share images and describe your findings.
-<!--  -->
+    <div class="image-container">
+        <img src="SS/ss53.png">
+        <img src="SS/ss54.JPG">
+    </div>
+
+    <br>
+
+    <div class="description">
+        <p>
+            I then implemented a program that plays the Game of Thrones Theme song through the Piezo Buzzer. Here is the
+            code that I implemented into the Arduino Uno.
+        </p>
+
+        <br>
+
+        <div class="code-section">
+            <pre>
+              <code>
+          /*
+            Game of Thrones
+            Connect a piezo buzzer or speaker to pin 11 or select a new pin.
+            More songs available at https://github.com/robsoncouto/arduino-songs                                            
+                                                        
+            Robson Couto, 2019
+          */
+          #define NOTE_B0  31
+          #define NOTE_C1  33
+          #define NOTE_CS1 35
+          #define NOTE_D1  37
+          #define NOTE_DS1 39
+          // ... (omitted for brevity)
+          #define NOTE_G7  3136
+          #define NOTE_GS7 3322
+          #define NOTE_A7  3520
+          #define NOTE_AS7 3729
+          #define NOTE_B7  3951
+          #define NOTE_C8  4186
+          #define NOTE_CS8 4435
+          #define NOTE_D8  4699
+          #define NOTE_DS8 4978
+          #define REST      0
+          
+          // change this to make the song slower or faster
+          int tempo = 85;
+          
+          // change this to whichever pin you want to use
+          int buzzer = 11;
+          
+          // notes of the melody followed by the duration.
+          // a 4 means a quarter note, 8 an eighth , 16 sixteenth, so on
+          // !!negative numbers are used to represent dotted notes,
+          // so -4 means a dotted quarter note, that is, a quarter plus an eighteenth!!
+          int melody[] = {
+            // Game of Thrones
+            // Score available at https://musescore.com/user/8407786/scores/2156716
+          
+            // ... (omitted for brevity)
+          
+            REST,4, NOTE_GS5,16, NOTE_AS5,16, NOTE_C6,8, NOTE_G5,8, NOTE_GS5,16, NOTE_AS5,16,
+            NOTE_C6,8, NOTE_G5,16, NOTE_GS5,16, NOTE_AS5,16, NOTE_C6,8, NOTE_G5,8, NOTE_GS5,16, NOTE_AS5,16,  
+          };
+          
+          // sizeof gives the number of bytes, each int value is composed of two bytes (16 bits)
+          // there are two values per note (pitch and duration), so for each note there are four bytes
+          int notes = sizeof(melody) / sizeof(melody[0]) / 2;
+          
+          // this calculates the duration of a whole note in ms
+          int wholenote = (60000 * 4) / tempo;
+          
+          int divider = 0, noteDuration = 0;
+          
+          void setup() {
+            // iterate over the notes of the melody.
+            // Remember, the array is twice the number of notes (notes + durations)
+            for (int thisNote = 0; thisNote < notes * 2; thisNote = thisNote + 2) {
+          
+              // calculates the duration of each note
+              divider = melody[thisNote + 1];
+              if (divider > 0) {
+                // regular note, just proceed
+                noteDuration = (wholenote) / divider;
+              } else if (divider < 0) {
+                // dotted notes are represented with negative durations!!
+                noteDuration = (wholenote) / abs(divider);
+                noteDuration *= 1.5; // increases the duration in half for dotted notes
+              }
+          
+              // we only play the note for 90% of the duration, leaving 10% as a pause
+              tone(buzzer, melody[thisNote], noteDuration * 0.9);
+          
+              // Wait for the specified duration before playing the next note.
+              delay(noteDuration);
+          
+              // stop the waveform generation before the next note.
+              noTone(buzzer);
+            }
+          }
+          
+          void loop() {
+            // no need to repeat the melody.
+          }
+              </code>
+            </pre>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <p class="description">
+        Below is a video of the Piezo Buzzer working:
+    </p>
+
+    <div id="center">
+        <video width="800" controls preload="metadata">
+            <source src="SS/gameofthrones.MOV" type="video/quicktime">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Use an oscilloscope to discover the time domain at which your output device is operating. Is it on a fixed clock?
+    What's its speed? Share images and describe your findings. -->
+
+    <div id="center">
+        <p class="subheading">
+            Input: The value of the potentiometer.
+        </p>
+        <p class="subheading">
+            Output: The audio from the Piezo Buzzer (with respect to its designated volume level)
+        </p>
+    </div>
 
 </body>
 

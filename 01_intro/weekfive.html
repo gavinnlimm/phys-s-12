@@ -5,11 +5,11 @@
     <title>Week 5 | Gavin Lim </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="weekone.html">Final Project</a>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="center" id="aboutPage">
-        <h1> <b>3D Design / Printing & Scanning</b> </h1>
+        <h1>3D Design / Printing & Scanning</h1>
     </div>
 
     <div class="description">
@@ -34,6 +34,8 @@
             scanner, in order to scan real life objects and recieve a 3D model in the computer that could be edited in
             Fusion360.
         </p>
+
+        <br>
 
         <p class="subheading">
             1. 3D Printing
@@ -102,23 +104,28 @@
         Printing Results:
     </p>
 
-    <div class="image-container">
-        <img src="SS/ss40.JPG">
-        <img src="SS/ss41.JPG">
+    <div class="description">
+        <div class="image-container">
+            <img src="SS/ss40.JPG">
+            <img src="SS/ss41.JPG">
+        </div>
+
+        <br><br>
+
+        <p class="subheading">
+            2. 3D Scanning
+        </p>
+
+        <p>
+            Another part of this week's assignment was to use a photogrammetry application or a scanner to scan an
+            object
+            within the lab to retreive a 3D model of it.
+            Using the RevoPoint Scanner, I managed to scan a sculpture that I found within the lab. Here are a couple of
+            pictures of the sculpture before the scan:
+        </p>
     </div>
 
     <br>
-
-    <p class="subheading">
-        2. 3D Scanning
-    </p>
-
-    <p>
-        Another part of this week's assignment was to use a photogrammetry application or a scanner to scan an object
-        within the lab to retreive a 3D model of it.
-        Using the RevoPoint Scanner, I managed to scan a sculpture that I found within the lab. Here are a couple of
-        pictures of the sculpture before the scan:
-    </p>
 
     <!-- Modified from W3Schools -->
 
@@ -129,6 +136,8 @@
             <button class="btn"><i class="fa fa-download"></i> Scanned Sculpture Download </button>
         </a>
     </div>
+
+    <br>
 
     <!-- End of citation -->
 

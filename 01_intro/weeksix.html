@@ -5,11 +5,11 @@
     <title>Week 6 | Gavin Lim </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="weekone.html">Final Project</a>
@@ -22,12 +22,8 @@
         <a href="weeknine.html">Week 9</a>
     </div>
 
-    <!-- Assignment:
-1. Use a sensor to measure a physical quantity with your microcontroller. Calibrate your sensor (describe the range between its min and max values, and whether/how you can control this range). Show data in the form of a table or graph.
-2. Do the same as (1) with a capacitive sensor you have fabricated yourself using copper tape, aluminum foil, Velostat, etc. -->
-
     <div class="center" id="aboutPage">
-        <h1> <b>Electronic Input Devices</b> </h1>
+        <h1>Electronic Input Devices</h1>
     </div>
 
     <div class="description">
@@ -40,19 +36,21 @@
 
         </p>
 
+        <br>
+
         <p class="subheading">
             1. Photoresistor Circuit
         </p>
 
         <p>
-
-        </p>
-
-        <p>
-            So, for the first assignment, we were tasked to use a given sensor to measure a physical quantity using the
-            microcontroller (Arduino Uno). The picture on the bottom left depicts the circuit model that I followed, and
+            For the first assignment, we were tasked to use a given sensor to measure a physical quantity using the
+            Arduino Uno Microcontroller. Thus, I attempted to use a photoresistor to measure the amount of voltage that
+            is transmitted through a circuit. The picture on the bottom left depicts the circuit model that I followed,
+            and
             the picture on the bottom right shows how I implemented this model onto an Arduino.
         </p>
+
+        <br>
 
         <div class="image-container">
             <img src="SS/ss46.JPG">
@@ -72,52 +70,88 @@
 
         <div class="code-section">
             <pre>
-              <code>
-                /*
-                  AnalogReadSerial
-          
-                  Reads an analog input on pin 0, prints the result to the Serial Monitor.
-                  Graphical representation is available using Serial Plotter (Tools > Serial Plotter menu).
-                  Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.
-          
-                  This example code is in the public domain.
-          
-                  https://www.arduino.cc/en/Tutorial/BuiltInExamples/AnalogReadSerial
-                */
-          
-                // the setup routine runs once when you press reset:
-                void setup() {
-                  // initialize serial communication at 9600 bits per second:
-                  Serial.begin(9600);
-                }
-          
-                // the loop routine runs over and over again forever:
-                void loop() {
-                  // read the input on analog pin 0:
-                  int sensorValue = analogRead(A0);
-                  // print out the value you read:
-                  Serial.println(sensorValue);
-                  delay(1);  // delay in between reads for stability
-                }
-              </code>
-            </pre>
-        </div>
+        <code>
+    /*
+        AnalogReadSerial
 
-        <br>
+                Reads an analog input on pin 0, prints the result to the Serial Monitor.
+                Graphical representation is available using Serial Plotter (Tools > Serial Plotter menu).
+                Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.
 
-        <p class="subheading" id="center"> Below are two videos of the photoresistor working:</p>
+                This example code is in the public domain.
 
-        <div class="image-container">
-            <img src="SS/photoresist1gif.gif">
-            <img src="SS/photoresist2gif.gif">
+                https://www.arduino.cc/en/Tutorial/BuiltInExamples/AnalogReadSerial
+            */
+
+            // the setup routine runs once when you press reset:
+            void setup() {
+                // initialize serial communication at 9600 bits per second:
+                Serial.begin(9600);
+            }
+
+            // the loop routine runs over and over again forever:
+            void loop() {
+                // read the input on analog pin 0:
+                int sensorValue = analogRead(A0);
+                // print out the value you read:
+                Serial.println(sensorValue);
+                delay(1);  // delay in between reads for stability
+            }
+        </code>
+    </pre>
         </div>
 
         <br>
 
         <p>
-            Through this experiment, I discovered that the minimum value that was recorded by the photoresistor was
-            zero, and that the maximum was somewhat approximately 450 (with the iPhone flashlight directly on the top of
-            the photoresistor).
+            Within this program, the setup() function initailizes the communication between the Arduino Uno
+            Microcontroller and the connected photoresistor.
+            This connection itself allows for real-time communication, enabling the Arduino to simulataneously send and
+            receive data between the photoresistor and the computer.
+        </p>
+
+        <p>
+            Furthermore, the loop() function in this code allows the Arduio to continously read the analog input from
+            pin A0 using the
+            analogRead(A0) function, which measures the voltage level on the pin. This value of voltage is then stored
+            in the variable sensorValue.
+            The program then continues to print this voltage value (sensorvalue) to the Serial Monitor within the
+            Arduino IDE application.
+            This allows for us to observe the values received by the photoresistor in real-time.
+        </p>
+
+        <br>
+
+        <p class="subheading" id="center"> Below are two videos of the photoresistor working:</p>
+
+        <div id="center">
+            <video width="800" autoplay muted loop>
+                <source src="SS/photoresist1.mov">
+            </video>
+            <video width="800" autoplay muted loop>
+                <source src="SS/photoresist2.mov">
+            </video>
+        </div>
+
+        <br>
+
+        <p>
+            Using my iPhone flashlight, I was able manipulate the amount of voltage that was being transmitted across
+            the circuit. By putting the flashlight closer to the photoresistor, the photoresistor recorded up an
+            increased amount of voltage. Vice versa; when the flashlight got further away from the photoresistor, the
+            values recorded by the resistor decreased.
+        </p>
+        <p>
+            Through the visualization of the graph, I discovered the maximum
+            value recorded by the photoresistor was
+            approximately 450.
+        </p>
+        <em>
+            Keep in mind that this value was recorded with the iPhone flashlight directly above the
+            photoresistor, allowing the photoresistor to measure the maximum amount of voltage that could be
+            recorded
+            through the photoresistor. In addition, the minimum value recorded was zero.
+        </em>
         </p>
 
         <br>
@@ -127,66 +161,106 @@
         </p>
 
         <p>
-            Another part of this week's assignment was to create a capacitive sensor. In my case, I created a circuit
-            that uses two metallic sheets to vary the amount of voltage/current that is passing through the circuit.
+            Another part of this week's assignment was to create a capacitive sensor. In my case, I created a capacitive
+            sensor
+            that uses two metallic sheets to vary the amount of voltage/current that is passing through the circuit. In
+            this particular case, the two metallic sheets act as conductive elements; meaning that when they are brought
+            closer to one another,
+            the resulting capacitance between them increases. An increase in capacitance therefore causes the amount of
+            voltage passing through the circuit to increase. Below is a picture of the capacitive sensor:
+        </p>
+    </div>
+
+    <div class="image-container">
+        <img src="SS/ss48.JPG">
+    </div>
+
+    <br>
+
+    <p class="description">
+        Another important thing to note is that the use of the foam block between the two metal sheets is essential for
+        one reason:
+    </p>
+    <p class="description">
+        <b>Preventing a Short Circuit:</b>
+        Without the use of the foam block, the two metallic sheets would be in direct contact, causing a
+        low-resistance path for the current to flow, and ultimately causing a short circuit. The use of the block
+        prevents this short circuit from happening, as it acts as an insulator between the two metallic sheets.
+    </p>
+
+    <br>
+    
+    <div class="description">
+        <p id="center">
+            <b>Here was the code that I implemented into the Arduino Uno:</b>
         </p>
 
-        <div class="image-container">
-            <img src="SS/ss48.JPG">
-            <img src="SS/capacitivesensor.gif">
+        <div class="code-section">
+            <pre>
+                    <code>
+            long result;   // variable for the result of the tx_rx measurement.
+            int analog_pin = A3;
+            int tx_pin = 4;
+            
+            void setup() {
+                pinMode(tx_pin, OUTPUT);      // Pin 4 provides the voltage step
+                Serial.begin(9600);
+            }
+            
+            void loop() {
+                result = tx_rx();
+                Serial.println(result);
+            }
+            
+            long tx_rx() {
+                // Function to execute rx_tx algorithm and return a value
+                // that depends on the coupling of two electrodes.
+                // Value returned is a long integer.
+                int read_high;
+                int read_low;
+                int diff;
+                long int sum;
+                int N_samples = 100;    // Number of samples to take.  Larger number slows it down, but reduces scatter.
+            
+                sum = 0;
+            
+                for (int i = 0; i < N_samples; i++) {
+                    digitalWrite(tx_pin, HIGH);              // Step the voltage high on conductor 1.
+                    read_high = analogRead(analog_pin);     // Measure response of conductor 2.
+                    delayMicroseconds(100);                 // Delay to reach steady state.
+                    digitalWrite(tx_pin, LOW);               // Step the voltage to zero on conductor 1.
+                    read_low = analogRead(analog_pin);      // Measure response of conductor 2.
+                    diff = read_high - read_low;            // desired answer is the difference between high and low.
+                    sum += diff;                            // Sums up N_samples of these measurements.
+                }
+                return sum;
+            }
+                    </code>
+                </pre>
         </div>
 
         <br>
 
         <p>
-            Here was the code that I implemented into the Arduino Uno:
+            After successfully installing the program into the Arduino Uno and setting up the circuit, I tested the capactive sensor. Below is a video of the Serial Monitor in the Arduino application, that allowed me to track the capacitance within the circuit.
         </p>
-
-        <div class="code-section">
-            <pre>
-                <code>
-                    long result;   // variable for the result of the tx_rx measurement.
-                    int analog_pin = A3;
-                    int tx_pin = 4;
-        
-                    void setup() {
-                        pinMode(tx_pin, OUTPUT);      // Pin 4 provides the voltage step
-                        Serial.begin(9600);
-                    }
-        
-                    void loop() {
-                        result = tx_rx();
-                        Serial.println(result);
-                    }
-        
-        
-                    long tx_rx() {
-                        // Function to execute rx_tx algorithm and return a value
-                        // that depends on the coupling of two electrodes.
-                        // Value returned is a long integer.
-                        int read_high;
-                        int read_low;
-                        int diff;
-                        long int sum;
-                        int N_samples = 100;    // Number of samples to take.  Larger number slows it down, but reduces scatter.
-        
-                        sum = 0;
-        
-                        for (int i = 0; i < N_samples; i++) {
-                            digitalWrite(tx_pin, HIGH);              // Step the voltage high on conductor 1.
-                            read_high = analogRead(analog_pin);     // Measure response of conductor 2.
-                            delayMicroseconds(100);                 // Delay to reach steady state.
-                            digitalWrite(tx_pin, LOW);               // Step the voltage to zero on conductor 1.
-                            read_low = analogRead(analog_pin);      // Measure response of conductor 2.
-                            diff = read_high - read_low;            // desired answer is the difference between high and low.
-                            sum += diff;                            // Sums up N_samples of these measurements.
-                        }
-                        return sum;
-                    }
-                </code>
-            </pre>
-        </div>
     </div>
+
+    <br>
+
+    <div id="center">
+        <video width="800" autoplay muted loop>
+            <source src="SS/capacitivesensor.MOV">
+        </video>
+    </div>
+
+    <br>
+
+    <p class="description">
+        As we can see from the video, the capacitance sensor worked out successfully. The more pressure that I put on the two metallic sheets, and the more that they got closer to one another, the capacitance captured increased.
+    </p>
+
+    <br>
 
 </body>
 

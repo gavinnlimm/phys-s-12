@@ -5,11 +5,11 @@
     <title>Week 1 | Gavin Lim</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="weekone.html">Final Project</a>
@@ -23,12 +23,13 @@
     </div>
 
     <div class="center" id="aboutPage">
-        <h1> <b>Final Project: Guitar Tuner</b> </h1>
+        <h1>Final Project: Guitar Tuner</h1>
     </div>
 
     <div class="description">
         <p class="subheading" id="center">
             vision:
+        </p>
         <p>One of my personal passions include playing musical instruments such as the guitar. I wanted to create a
             simple device/mechanism that would support guitar players, so I found one specific problem that all players
             struggle with: tuning.
@@ -37,61 +38,61 @@
             Therefore, through this final project, I have decided to develop a device that not only simplifies, but
             automates this entire process.
         </p>
-        </p>
+
+        <br>
+    </div>
+
+    <div class="image-container">
+        <img src="pic5.jpeg">
+        <img src="pic6.jpeg">
+    </div>
+
+    <br>
+
+    <p class="subheading" id="center">
+        the automatic guitar tuner will consist of <b>two main components:</b>
+    </p>
+
+    <ol class="description">
+        <li><b>The Frequency Detector</b></li>
+        <ul>
+            <li>The frequency detector will be responsible for detecting the current frequency of a specific
+                string on the guitar. With the use of a microphone, and signal processing techniques, the frequency
+                detector will be able to
+                analyze the audio input from the guitar. Furthermore, by determining the frequency, it will provide
+                real-time
+                feedback on how to correctly tune the guitar strings.</li>
+        </ul>
 
         <br>
 
         <div class="image-container">
-            <img src="pic5.jpeg">
-            <img src="pic6.jpeg">
+            <img src="pic1.jpeg">
+            <img src="pic2.jpeg">
         </div>
 
         <br>
 
-        <p class="subheading" id="center">
-            the automatic guitar tuner will consist of <b>two main components:</b>
+        <li><b>The Peg Adjustment System</b></li>
+        <ul>
+            <li>The motor-controlled peg adjustment system will be connected to the tuning pegs of the guitar. Based
+                on
+                the feedback received from the frequency detector, this system will automatically adjust the pegs to
+                achieve the correct frequency for each string. The motor will rotate the pegs in the required
+                direction
+                until the desired frequency is reached.</li>
+        </ul>
+    </ol>
+
+    <div class="subheading" id="center">
+        <p>
+            input: the frequencies of the guitar strings recorded with a microphone
         </p>
-
-        <ol>
-            <li><b>The Frequency Detector</b></li>
-            <ul>
-                <li>The frequency detector will be responsible for detecting the current frequency of a specific
-                    string on the guitar. With the use of a microphone, and signal processing techniques, the frequency
-                    detector will be able to
-                    analyze the audio input from the guitar. Furthermore, by determining the frequency, it will provide
-                    real-time
-                    feedback on how to correctly tune the guitar strings.</li>
-            </ul>
-
-            <br>
-
-            <div class="image-container">
-                <img src="pic1.jpeg">
-                <img src="pic2.jpeg">
-            </div>
-
-            <br>
-
-            <li><b>The Peg Adjustment System</b></li>
-            <ul>
-                <li>The motor-controlled peg adjustment system will be connected to the tuning pegs of the guitar. Based
-                    on
-                    the feedback received from the frequency detector, this system will automatically adjust the pegs to
-                    achieve the correct frequency for each string. The motor will rotate the pegs in the required
-                    direction
-                    until the desired frequency is reached.</li>
-            </ul>
-        </ol>
-
-        <div class="subheading" id="center">
-            <p>
-                input: the frequencies of the guitar strings recorded with a microphone
-            </p>
-            <p>
-                output: the adjustment of the pegs to change the tune of the guitar strings
-            </p>
-        </div>
+        <p>
+            output: the adjustment of the pegs to change the tune of the guitar strings
+        </p>
     </div>
+
     <br>
 
 </body>

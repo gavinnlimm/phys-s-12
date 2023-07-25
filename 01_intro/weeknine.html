@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Week 2 | Gavin Lim </title>
+    <title>Week 9 | Gavin Lim </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="weekone.html">Final Project</a>
@@ -23,109 +23,212 @@
     </div>
 
     <div class="center" id="aboutPage">
-        <h1> <b>Networking and IoT</b> </h1>
+        <h1>Networking and IoT</h1>
     </div>
 
     <div class="description">
-        <p class="subheading">
-            1. Wireless Control (Microcontroller)
-        </p>
         <p>
-            Week nine of our class promises to be a captivating and knowledge-packed session focused on ESP32 devices,
-            wireless communication, and networking. The agenda begins with an Assignment Review at 12:00, providing
-            students with valuable feedback on their recent work. At 12:30, we will dive into setting up ESP32 devices,
-            enabling us to explore their capabilities and functionalities. The session will then move on to ESP-NOW
-            Radio at 12:45, where we will learn about this communication protocol and its applications in wireless data
-            transmission. Following this, at 1:00, we will delve into the world of Wired Communication, covering digital
-            I/O and Wired Serial Communication. A comprehensive overview of WiFi and Bluetooth is scheduled for 1:15,
-            providing insights into these essential wireless communication technologies. The session after the break at
-            1:45 will be dedicated to identifying the networking needs for our final projects, ensuring that we have a
-            clear understanding of the requirements. The highlight of the week will be the Wireless Networking Workshop
-            at 2:00, offering various options for exploration, including LAN Server setup, Remote Server using Firebase,
-            HTTP Client for APIs and web scrapers, Bluetooth applications, tutorials from RandomNerd, and Arduino IoT
-            Cloud exemplified by Faraz's example. This hands-on workshop will empower us with the skills and knowledge
-            needed to design and implement wireless networking solutions for our projects, making week nine an engaging
-            and practical experience.
+            During this week of class, we learned how to navigate different network devices, and aspects of wireless
+            communication to learn how to remotely control microcontrollers.
+            For instance, we dove deeper into the ESP32 microcontrollers, understanding its different capabiilites and
+            functionalities, while also understanding it's application in wireless data transmission.
+
+        </p>
+
+        <p class="subheading">
+            1. Wireless Remote LED Control with ESP32 and Google Firebase
         </p>
 
         <p id="center">
-            I worked with a partner in class (Ali Cicek) to create a circuit which consisted of a lightbulb that could
-            be switched on and off through the use of our computers via WIFI connection.
+            <em>
+                Within this class assignment, I worked with a classmate (Ali Cicek) to create a circuit which consisted
+                of a lightbulb that could
+                be remotely switched on and off through the use of our computers via WIFI connection.
+            </em>
+        </p>
+
+        <p class="subheading">
+            A) Setting up Google Firebase
         </p>
 
         <p>
-            Our first step was to create a 
+            Our first step of this assignment was to create a WIFI server through Google Firebase, which is essentially
+            a 3rd party platform that acts as an interactable database.
+
+            To set up Google Firebase for the project, we
+            created a new Firebase project and specified a project name, which generated a unique URL for our database
+            access. We then opted for "Realtime Database" and created the database with appropriate security rules. We
+            set both read and write permissions to "true" to allow access for our ESP32 board.
         </p>
-
-        <br>
-    </div>
-
-    <div class="image-container">
-        <img src="SS/ss1.png" alt="Image 1">
-        <img src="SS/ss2.png" alt="Image 2">
     </div>
 
     <br>
 
     <div class="image-container">
-        <img src="SS/ss3.png" alt="Image 3">
-        <img src="SS/ss4.png" alt="Image 4">
+        <img src="SS/ss49.png">
+        <img src="SS/ss50.png">
+    </div>
+
+    <br>
+
+    <p class="description">
+        To establish secure
+        access, we generated a secret key, and with the Firebase URL and secret key, our ESP32 board can communicate
+        with the Firebase Realtime Database. This setup enables us to remotely control the LED connected to the
+        ESP32 board by updating the LED status in the Firebase console from anywhere with internet access.
+    </p>
+
+    <br>
+
+    <div class="image-container">
+        <img src="SS/ss51.png">
     </div>
 
     <br>
 
     <div class="description">
-        <p>First, I opened up Fusion 360, and crafted out a triangle. I then utilized the mirror and circular pattern
-            tool to create the shape of the shuriken.
-            After that, I crate construction lines in the middle of the shuriken, which would then be used to create the
-            wedges in the shuriken, that would allow each individual shape to connect to one another.
-            These wedges measure precisely 3.8mm in length.
+        <p class="subheading">
+            B) Circuit Assembly
         </p>
     </div>
 
-    <div class="image-container">
-        <img src="SS/ss5.png" alt="Image 3">
-        <img src="SS/ss6.png" alt="Image 4">
+    <p class="description">
+        After completing the Google Firebase setup, we needed to assemble our circuit. The circuit consists of several
+        components, including the ESP32C3 Xiao board, a breadboard, an LED, and a resistor. Below is a picture of our
+        circuit setup:
+    </p>
+
+    <br>
+
+    <div class="description">
+        <div class="image-container">
+            <img src="SS/ss52.JPG">
+        </div>
     </div>
 
-    <div class="image-container">
-        <img src="SS/ss7.png" alt="Image 3">
-        <img src="SS/ss8.png" alt="Image 4">
+    <br>
+
+    <div class="description">
+        <p class="subheading">
+            C) Implement Program into ESP32
+        </p>
+    </div>
+
+    <p class="description">
+        After finishing the circuit, we implemented a program that allows us to remotely control the LED light within
+        the circuit through Google Firebase.
+        The program defines the Firebase, and WIFI credentials, and essentially connects the ESP32 Xiao board to our
+        Wi-Fi network and Firebase database. Below is the code that I implemented into the ESP32 Xiao:
+    </p>
+
+    <br>
+
+    <div class="code-section">
+        <pre>
+            <code>
+    #include &lt;WiFi.h&gt;                                 // esp32 library
+    #include &lt;FirebaseESP32.h&gt;                        // firebase library
+    
+    #define FIREBASE_HOST "https://esp32-led-button-default-rtdb.firebaseio.com/"  // the project name address from firebase id
+    #define FIREBASE_AUTH "V3JMMs9eBeV1GhtJ4X9naPbFh2ztBYHuyLl4abQp"                // the secret key generated from firebase
+    #define WIFI_SSID "MAKERSPACE"                     // input your home or public wifi name
+    #define WIFI_PASSWORD "12345678"                  // password of wifi ssid
+    
+    String fireString = "";                            // led status received from firebase
+    int ledpin = 5;
+    
+    //Define FirebaseESP32 data object
+    FirebaseData firebaseData;
+    
+    void setup() {
+      Serial.begin(115200);
+      delay(1000);
+      pinMode(ledpin, OUTPUT);
+      WiFi.begin(WIFI_SSID, WIFI_PASSWORD);            // try to connect with wifi
+    
+      Serial.print("Connecting to ");
+      Serial.print(WIFI_SSID);
+      while (WiFi.status() != WL_CONNECTED) {
+        Serial.print(".");
+        delay(500);
+      }
+    
+      Serial.println();
+      Serial.print("Connected to ");
+      Serial.println(WIFI_SSID);
+      Serial.print("IP Address is : ");
+      Serial.println(WiFi.localIP());                  // print local IP address
+      Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);    // connect to firebase
+      Firebase.reconnectWiFi(true);
+      Firebase.set(firebaseData, "/LED_STATUS", "OFF");    // set initial string of "OFF"
+    }
+    
+    void loop() {
+    
+      Firebase.get(firebaseData, "/LED_STATUS");         // get led status input from firebase
+      fireString = firebaseData.stringData();            // change to e.g. intData() or boolData()
+      Serial.println(fireString);
+    
+      if (fireString == "ON") {                    // compare the input of led status received from firebase
+        Serial.println("Led Turned ON");
+        digitalWrite(ledpin, HIGH);                // make output led ON
+      }
+    
+      else if (fireString == "OFF") {              // compare the input of led status received from firebase
+        Serial.println("Led Turned OFF");
+        digitalWrite(ledpin, LOW);                 // make output led OFF
+      }
+    
+      else {
+        Serial.println("Please send ON/OFF");
+      }
+    
+      delay(1000);                                 // not strictly necessary
+    </code>
+    </pre>
     </div>
 
     <br>
 
     <div class="description">
         <p>
-            After completing the design of the shuriken, I utilized the extruding tool to generate the thickness of the
-            2d object. This thickness (3.8mm) matched the thickness of the medium that we were using in the laser
-            cutter: cardboard.
+            Within this program, the setup() function initalizes communication and sets up the LED pin as an output.
+            The micro-controller then attempts to connect to the designated Wi-Fi network, displaying its status through
+            the Serial Monitor on the Arduino application. After a successful connection between the microcontroller and the network,
+            the program then connects the ESP32 to my Google Firebase Realtime Database via the given Firebase URL and key.
+        </p>
+        <p>
+            Furthermore, the loop() function continuously monitors the Firebase database for updates to the LED
+            status.
+            
+            When receiving the LED status data from the Realtime Database at Google Firebase, the program stores this boolean value in the fireString variable. 
+            Based on
+            the
+            received status, the ESP32 board controls the LED, turning it on if the status is "ON," and turning it off
+            if
+            the status is "OFF."
         </p>
     </div>
 
     <div class="description">
         <p class="subheading">
-            Final Product and Final Thoughts:
+            Final Product:
         </p>
         <p>
-            Here below you can see the final results of shuriken. One limitation in my process of designing the
-            shuriken, was getting the nothces between each side of the shuriken to perfectly fit with the thickness of
-            the cardboard.
-            When initially laser cutting the cardboard, I realized that I should have made the width of the notches (in
-            Fusion360) a little smaller than the actual thickness of the cardboard. This was because the laser cutter
-            did burn off some of the cardboard, causing the size of the notches to be slightly bigger than planned.
+            After completing these three steps, we installed the program onto the ESP32 Xiao microcontroller, and tested
+            the remote control through Google Firebase. Here is a video of it:
         </p>
+
+        <br>
+
+        <div id="center">
+            <video width="800" autoplay muted loop>
+                <source src="SS/wirelessremoteledcontrol.mov">
+            </video>
+        </div>
     </div>
 
-    <div class="image-container">
-        <img src="SS/ss9.JPG" alt="Image 3">
-        <img src="SS/ss10.JPG" alt="Image 4">
-    </div>
-
-    <br>
-
-
-
+    <br><br>
 
 </body>
 

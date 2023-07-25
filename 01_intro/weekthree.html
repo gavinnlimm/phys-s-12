@@ -5,11 +5,11 @@
     <title>Week 3 & 4 | Gavin Lim </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="weekone.html">Final Project</a>
@@ -23,8 +23,10 @@
     </div>
 
     <div class="center" id="aboutPage">
-        <h1> <b>Electronics & Microcontroller Programming</b> </h1>
+        <h1>Electronics & Microcontroller Programming</h1>
     </div>
+
+    <br>
 
     <div class="description">
         <p class="subheading">
@@ -66,16 +68,43 @@
     <div class="image-container">
         <img src="SS/ss22.png">
         <img src="SS/ss23.png">
-        <img src="SS/ss24.png">
-        <img src="SS/ss25.png">
     </div>
 
     <br>
 
+    <div class="image-container">
+        <img src="SS/ss24.png">
+        <img src="SS/ss25.png">
+    </div>
+
+    <br><br>
+
+    <!-- Modified from W3Schools -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div id="center">
+        <a href="SS/kineticsculptureframe.stl" download>
+            <button class="btn"><i class="fa fa-download"></i> Kinetic Sculpture Frame Download </button>
+        </a>
+    </div>
+
+    <!-- End of citation -->
+
+    <br>
+
     <div class="description">
-        <p class="subheading" id="center">
+        <p class="subheading">
             Laser Cutting Phase:
         </p>
+
+        <p>
+            After designing the 2D model of the shape, I implemented this onto the laser cutter using a medium of
+            plywood. I also then used a hand drill to create a small hole (with the same size as the wooden rod) in the
+            center of the shape.
+        </p>
+
+        <br>
 
         <div class="image-container">
             <img src="SS/ss26.png">
@@ -85,9 +114,6 @@
         <br>
 
         <p>
-            After designing the 2D model of the shape, I implemented this onto the laser cutter using a medium of
-            plywood. I also then used a hand drill to create a small hole (with the same size as the wooden rod) in the
-            center of the shape.
             Furthermore, I also attached a wooden rod to the end of one of the axles on the motor. This was because the
             motor's original axle was too short to fully fit through the hole of the shape that I designed.
             Using a heat shrink tube, I connected a wooden rod to the end of one of the motors.
@@ -169,6 +195,8 @@
         </p>
     </div>
 
+    <br>
+
     <div class="image-container">
         <img src="SS/ss32.png">
         <img src="SS/ss33.png">
@@ -176,15 +204,26 @@
 
     <br>
 
-    <p class="subheading" id="center"> Final Product: </p>
+    <p class="heading" id="center"> Final Product: </p>
 
-    <div class="image-container">
-        <img src="SS/ss34.gif" width="1000px">
-        <img src="SS/ss35.gif" width="1000px">
+    <div class="description">
+        <p class="subheading" id="center">
+            Here is my Kinetic Sculpture running at different speeds (adjusted by the use of the
+            potentiometer)
+        </p>
     </div>
 
     <br>
 
+    <div id="center">
+        <img src="SS/ss34.gif" width="1000px">
+
+        <br><br>
+
+        <img src="SS/ss35.gif" width="1000px">
+    </div>
+
+    <br>
 
     <div class="description">
         <p class="subheading">
@@ -200,6 +239,8 @@
             shape in the sculpture, in order to fully replicate the model that I used as inspiration for this.
         </p>
     </div>
+
+    <br>
 
 </body>
 

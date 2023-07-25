@@ -13,20 +13,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: opacity 0.5s ease; /* Add a transition effect for smooth fading */
 }
+
 .topnav a {
     display: inline-block;
     color: #333;
     text-align: center;
-    padding: 15px 20px;
+    padding: 15px 15.5px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14.75px;
     white-space: nowrap;
-    /* Prevent the buttons from wrapping to the next line */
 }
+
 .topnav a:hover {
-    color: #ff0000; /* Change the text color on hover */
+    color: #ff0000;
 }
+
+/* Add a class to change the opacity when scrolling down */
+.topnav.scroll-down {
+    opacity: 0.7;
+}
+
 
 .center {
     text-align: center;
@@ -35,9 +43,11 @@ body {
 #homePage {
     padding: 240px 0;
 }
+
 #aboutPage {
-    padding: 20px 0;
+    padding: 20px;
 }
+
 #center {
     text-align: center;
 }
@@ -52,16 +62,17 @@ body {
 .description {
     padding-left: 230px;
     padding-right: 230px;
-    font-size: 15px;
+    font-size: 15.5px;
     text-align: justify;
 }
 
 .image-container {
     text-align: center;
 }
+
 .image-container img {
     display: inline-block;
-    max-width: 37%;
+    max-width: 40%;
     height: auto;
 }
 
@@ -79,15 +90,38 @@ body {
     color: #777070;
 }
 
+/* Start of Citation (Use of ChatGPT) */
+@import url('https://fonts.googleapis.com/css2?family=Monaco&display=swap');
+
 .code-section {
-    background-color: #f5f5f5;
+    background-color: #272822;
     padding: 20px;
-    border-radius: 100px;
-    font-family: Consolas, monospace;
-    line-height: 1.5;
+    border-radius: 8px;
+    font-family: 'Monaco', monospace; /* Changed to Monaco font */
+    font-size: 14px;
+    line-height: 1.6;
     margin: 0 auto;
     max-width: 900px;
+    overflow-x: auto;
+    color: #f8f8f8;
 }
+
+.code-section code {
+    display: block;
+    white-space: pre;
+    word-wrap: normal;
+    color: #f8f8f8;
+}
+
+.code-section code::before {
+    content: attr(class);
+    display: block;
+    margin-bottom: 0.5em;
+    color: #ef626c;
+}
+
+/* End of Citation */
+
 
 
 /* Style buttons */
@@ -98,13 +132,13 @@ body {
     padding: 12px 30px;
     cursor: pointer;
     font-size: 17px;
-  }
-  
-  /* Darker background on mouse-over */
-  .btn:hover {
-    background-color: RoyalBlue;
-  }
+}
 
-  #title {
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+}
+
+#title {
     font-size: 60px;
-  }
+}
