@@ -13,7 +13,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease; /* Add a transition effect for smooth fading */
+    transition: opacity 0.5s ease;
+    /* Add a transition effect for smooth fading */
 }
 
 .topnav a {
@@ -27,7 +28,7 @@ body {
 }
 
 .topnav a:hover {
-    color: #ff0000;
+    color: #007BFF;
 }
 
 /* Add a class to change the opacity when scrolling down */
@@ -46,6 +47,24 @@ body {
 
 #aboutPage {
     padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.imageShadow img {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    /* Adding a subtle box shadow */
+}
+
+.imageShadow video {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    /* Adding a subtle box shadow */
+}
+
+div {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #center {
@@ -74,13 +93,19 @@ body {
     display: inline-block;
     max-width: 40%;
     height: auto;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    /* Adding a subtle box shadow */
 }
 
 .subheading {
-    font-size: 18px;
+    font-size: 21px;
+    font-weight: bold;
     font-style: italic;
-    color: rgb(240, 50, 50)
+    color: #007BFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
+
 
 .heading {
     font-size: 50px;
@@ -97,7 +122,8 @@ body {
     background-color: #272822;
     padding: 20px;
     border-radius: 8px;
-    font-family: 'Monaco', monospace; /* Changed to Monaco font */
+    font-family: 'Monaco', monospace;
+    /* Changed to Monaco font */
     font-size: 14px;
     line-height: 1.6;
     margin: 0 auto;
@@ -141,4 +167,30 @@ body {
 
 #title {
     font-size: 60px;
+}
+
+
+.code-section {
+    position: relative;
+    padding: 20px;
+}
+
+#copyButton {
+    position: absolute;
+    top: 30px; /* adjust as needed */
+    right: 30px; /* adjust as needed */
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    background-color: #009578;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#copyButton:hover {
+    background-color: #00664e;
+}
+#copyButton:active {
+    background-color: #004d39;
 }

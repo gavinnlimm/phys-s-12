@@ -1,4 +1,4 @@
-window.onscroll = function() {
+window.onscroll = function () {
     scrollFunction();
 };
 
@@ -10,3 +10,21 @@ function scrollFunction() {
         topnav.style.opacity = "1";
     }
 }
+
+// Function made from ChatGPT
+function copyCode() {
+    var code = document.getElementById("codeBlock").innerText;
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = code;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    // Change button text to show copying is done
+    document.getElementById("copyButton").innerText = "Code Copied!";
+    // Change button text back after 3 seconds
+    setTimeout(function () {
+        document.getElementById("copyButton").innerText = "Copy Code";
+    }, 3000);
+}
+

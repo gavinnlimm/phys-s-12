@@ -34,24 +34,13 @@
             Then, we dove deeper into the many different output devices that were available within the lab. For instance
             we learned how to operate RGB/LED strips, and manipulate the color within these individual channel. We also
             looked into the use of OLED/TFT displays, and changing programs to display different things on the screens.
-            Furthermore,
-            In addition, we also learned how to use an oscilloscope, to visualize
-            electrical signals effectively.
         </p>
 
         <br>
 
-        <p id="center" >
+        <p id="center" style="font-size: large;">
             <b>Assignment:</b> To create a circuit that integrates at least one input device and
             one output device.
-        </p>
-
-        <br>
-
-        <p id="center">
-            <em>
-                I found all of these output devices interesting to use, but I was most interested in the Piezo Buzzer.
-            </em>
         </p>
 
         <br>
@@ -61,31 +50,54 @@
         </p>
 
         <p>
-            In order to create the circuit...
-            On the bottom left is a model of the circuit that I followed to produce output from the Piezo Buzzer. On the
-            bottom left is a picture of the actual Arduino setup.
+            Out of all of the output devices that we could choose from, I found the Piezo Buzzer the most interesting.
+            Therefore, I attempted to create a circuit that used a program within an Arduino to play a song on a Piezo
+            Buzzer.
+            Below are two pictures: one of a circuit model that I followed to setup the Piezo Buzzer. Another picture
+            shows how I implemented this circuit model onto a real Arduino.
         </p>
+    </div>
+
+    <br>
+
+    <div id="center">
+        <img src="SS/ss53.png" width="800px">
     </div>
 
     <br><br>
 
-    <div class="image-container">
-        <img src="SS/ss53.png">
-        <img src="SS/ss54.JPG">
+    <div class="center">
+        <img src="SS/ss54.JPG" width="800px">
     </div>
 
     <br>
 
     <div class="description">
+        <p class="subheading">
+            Program Implementation
+        </p>
+    </div>
+
+    <div class="description">
         <p>
-            I then implemented a program that plays the Game of Thrones Theme song through the Piezo Buzzer. Here is the
-            code that I implemented into the Arduino Uno.
+            After having successfully assembled the circuit, the next step was to incorporate a program into the
+            circuit.
+            In pursuit of a fitting piece of music to play through the Piezo Buzzer, I found an online program that was
+            coded
+            to play the Game of Thrones theme song.
         </p>
 
         <br>
 
+        <p id="center">
+            <b style="font-size: large;">
+                Here is the code that I implemented into the Arduino Uno:
+            </b>
+        </p>
+
         <div class="code-section">
-            <pre>
+            <button onclick="copyCode()" id="copyButton">Copy Code</button>
+            <pre id="codeBlock">
               <code>
           /*
             Game of Thrones
@@ -178,28 +190,50 @@
 
     <br><br>
 
-    <p class="description">
-        Below is a video of the Piezo Buzzer working:
+    <p class="description" id="center">
+        <b style="font-size: larger;">
+            Below is a video of the Piezo Buzzer working:
+        </b>
     </p>
 
     <div id="center">
-        <video width="800" controls preload="metadata">
-            <source src="SS/gameofthrones.MOV" type="video/quicktime">
-            Your browser does not support the video tag.
-        </video>
+        <iframe width="1000" height="563" src="https://www.youtube.com/embed/q546H0_vcBE" frameborder="0"
+            allowfullscreen></iframe>
     </div>
+
+    <br>
+
+    <div class="description">
+        <p class="subheading">
+            Adding an Input Device
+        </p>
+
+        <p>
+            After successfully creating the circuit, I wanted to add an input device, which would control whether if the
+            sound from the Piezo Buzzer was going to be played or not. Thus, I changed the circuit and made sure that
+            the current had to go through a button in order to reach the
+            output device. Furthermore, I wanted to experiment with a different device, so instead of a Piezo Buzzer, I
+            soldered the end of a wire to a speaker. Then, I
+            replaced the Piezo Buzzer in the circuit with this speaker.
+        </p>
+
+        <br>
+
+        <p id="center">
+            <b id="center" style="font-size: large;">Here is a video of the setup after the new configuration: </b>
+        </p>
+
+        <div id="center">
+            <iframe width="1000" height="563" src="https://www.youtube.com/embed/PuCYoyg9kvc" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <br><br>
 
     <!-- Use an oscilloscope to discover the time domain at which your output device is operating. Is it on a fixed clock?
     What's its speed? Share images and describe your findings. -->
-
-    <div id="center">
-        <p class="subheading">
-            Input: The value of the potentiometer.
-        </p>
-        <p class="subheading">
-            Output: The audio from the Piezo Buzzer (with respect to its designated volume level)
-        </p>
-    </div>
 
 </body>
 

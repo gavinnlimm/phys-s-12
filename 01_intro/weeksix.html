@@ -69,7 +69,8 @@
         <br>
 
         <div class="code-section">
-            <pre>
+            <button onclick="copyCode()" id="copyButton">Copy Code</button>
+            <pre id="codeBlock">
         <code>
     /*
         AnalogReadSerial
@@ -124,13 +125,15 @@
 
         <p class="subheading" id="center"> Below are two videos of the photoresistor working:</p>
 
-        <div id="center">
-            <video width="800" autoplay muted loop>
-                <source src="SS/photoresist1.mov">
-            </video>
-            <video width="800" autoplay muted loop>
-                <source src="SS/photoresist2.mov">
-            </video>
+        <div class="imageShadow">
+            <div id="center">
+                <video width="800" autoplay muted loop>
+                    <source src="SS/photoresist1.mov">
+                </video>
+                <video width="800" autoplay muted loop>
+                    <source src="SS/photoresist2.mov">
+                </video>
+            </div>
         </div>
 
         <br>
@@ -189,7 +192,7 @@
     </p>
 
     <br>
-    
+
     <div class="description">
         <p id="center">
             <b>Here was the code that I implemented into the Arduino Uno:</b>
@@ -242,13 +245,15 @@
         <br>
 
         <p>
-            After successfully installing the program into the Arduino Uno and setting up the circuit, I tested the capactive sensor. Below is a video of the Serial Monitor in the Arduino application, that allowed me to track the capacitance within the circuit.
+            After successfully installing the program into the Arduino Uno and setting up the circuit, I tested the
+            capactive sensor. Below is a video of the Serial Monitor in the Arduino application, that allowed me to
+            track the capacitance within the circuit.
         </p>
     </div>
 
     <br>
 
-    <div id="center">
+    <div id="center" class="imageShadow">
         <video width="800" autoplay muted loop>
             <source src="SS/capacitivesensor.MOV">
         </video>
@@ -257,7 +262,8 @@
     <br>
 
     <p class="description">
-        As we can see from the video, the capacitance sensor worked out successfully. The more pressure that I put on the two metallic sheets, and the more that they got closer to one another, the capacitance captured increased.
+        As we can see from the video, the capacitance sensor worked out successfully. The more pressure that I put on
+        the two metallic sheets, and the more that they got closer to one another, the capacitance captured increased.
     </p>
 
     <br>

@@ -23,21 +23,127 @@
     </div>
 
     <div class="center" id="aboutPage">
-        <h1>CNC Milling, Molding & Casting</h1>
+        <h1> CNC Milling, Molding & Casting </h1>
     </div>
-
-    <!-- 
-        Assignment:
-Use an oscilloscope to discover the time domain at which your output device is operating. Is it on a fixed clock? What's its speed? Share images and describe your findings.
-Prepare CAD files for CNC (next class). Consider either 2D DXF files for routing sheet material (like plywood or OSB), or 3D STL files to mill out a (2.5D) shape. We will also cover molding & casting, so you may want to consider milling a mold.
-     -->
 
     <div class="description">
         <p>
-
+            Within the 8th week, we explored the concept of CNC machining, and explored the many different features that
+            CNC machining has to offer.
+            In addition, we experimented with and learned how to use several different devices that use CNC modeling.
+            Some of the machines that we used included: the ShopBot, the Shaper, and the monoFab SRM-20 milling machine.
         </p>
 
+        <br>
 
+        <p id="center" style="font-size: large;">
+            <b>Assignment:</b> To design an object using CNC and create an object by molding and casting.
+        </p>
+
+        <br>
+
+        <p class="subheading">
+            Design Phase
+        </p>
+
+        <p>
+            My plan was to create a mold for the molding/casting project using the monoFab SRM-20
+            milling machine. Using a wax block as my medium, I wanted to use the milling machine to create a mold for an
+            interesting shape.
+            So, first I used Fusion360 to create this shape, which would later be implemented onto the CNC mill.
+        </p>
+    </div>
+
+    <br>
+
+    <div class="image-container">
+        <img src="SS/cncmold1.png">
+        <img src="SS/cncmold2.png">
+    </div>
+
+    <br>
+
+    <p class="description">
+        First, I created a body of a object; using the eclipse tool and the circular pattern tool, I created the 2D
+        design of the object.
+        After this, I extruded it to a certain degree, and then added filleted edges along the bottom side of the
+        object.
+    </p>
+
+    <br>
+
+    <div id="center" class="imageShadow">
+        <img src="SS/cncmold3.png" width="800px">
+    </div>
+
+    <br>
+
+    <p class="description">
+        After creating 3D model of my intended object, I created another body (box) representing the wax block that I
+        was going to mill out of.
+        Then, using the extruding tool, I cut out my intended object from the block, which would later then be used for
+        the mold.
+    </p>
+
+    <br>
+
+    <div class="description">
+        <p class="subheading">
+            CNC Milling: Roughing Pass
+        </p>
+
+        <p>
+            Once I created the STL file for the object, I needed to start milling the mold onto the wax block. So, I
+            installed the STL file into a USB and used the monoFab SRM-20 milling machine to start the first step in the
+            milling process: the roughing pass. Below are the setup configurations that I used for the roughing pass:
+        </p>
+
+        <br>
+
+        <div class="image-container">
+            <img src="SS/cncconfig1.JPG">
+            <img src="SS/cncconfig2.JPG">
+            <img src="SS/cncconfig3.JPG">
+            <img src="SS/cncconfig4.JPG">
+            <img src="SS/cncconfig5.JPG">
+            <img src="SS/cncconfig6.JPG">
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div id="center" class="imageShadow">
+        <img src="SS/cncfullconfig.JPG" width="1000px">
+    </div>
+
+    <br>
+
+    <div class="description">
+        <p class="subheading">
+            Finishing Pass
+        </p>
+
+        <p>
+            After completing the roughing pass of the milling process (using the 1/8th inch drill), I then utilized a
+            smaller drill of approximately 1/16th of an inch for a drill. This allowed me to create a more detailed shape on the wax block, with
+            finer edges. Additionally, this smaller drill allowed for the filleted edges on the bottom side of my object.
+        </p>
+
+        <br>
+
+        <p id="center" style="font-size: larger;">
+            <b>
+                Here is the final mold (after both the roughing/finishing phase):
+            </b>
+        </p>
+
+        <div class="image-container">
+            <img src="SS/cncmoldproduct1.jpg">
+            <img src="SS/cncmoldproduct2.jpg">
+            <img src="SS/cncmoldproduct3.jpg">
+            <img src="SS/cncmoldproduct4.jpg">
+        </div>
     </div>
 
 </body>

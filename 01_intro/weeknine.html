@@ -35,6 +35,8 @@
 
         </p>
 
+        <br>
+
         <p class="subheading">
             1. Wireless Remote LED Control with ESP32 and Google Firebase
         </p>
@@ -46,6 +48,8 @@
                 be remotely switched on and off through the use of our computers via WIFI connection.
             </em>
         </p>
+
+        <br>
 
         <p class="subheading">
             A) Setting up Google Firebase
@@ -80,11 +84,11 @@
 
     <br>
 
-    <div class="image-container">
-        <img src="SS/ss51.png">
+    <div id="center" class="imageShadow">
+        <img src="SS/ss51.png" width="900px">
     </div>
 
-    <br>
+    <br><br>
 
     <div class="description">
         <p class="subheading">
@@ -106,7 +110,7 @@
         </div>
     </div>
 
-    <br>
+    <br><br>
 
     <div class="description">
         <p class="subheading">
@@ -124,7 +128,8 @@
     <br>
 
     <div class="code-section">
-        <pre>
+        <button onclick="copyCode()" id="copyButton">Copy Code</button>
+        <pre id="codeBlock">
             <code>
     #include &lt;WiFi.h&gt;                                 // esp32 library
     #include &lt;FirebaseESP32.h&gt;                        // firebase library
@@ -210,6 +215,8 @@
         </p>
     </div>
 
+    <br>
+
     <div class="description">
         <p class="subheading">
             Final Product:
@@ -221,8 +228,8 @@
 
         <br>
 
-        <div id="center">
-            <video width="800" autoplay muted loop>
+        <div id="center" class="imageShadow">
+            <video width="1000" autoplay muted loop>
                 <source src="SS/wirelessremoteledcontrol.mov">
             </video>
         </div>
