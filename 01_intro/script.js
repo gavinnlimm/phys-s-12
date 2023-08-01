@@ -1,15 +1,16 @@
 window.onscroll = function () {
-    scrollFunction();
-};
+    var topnav = document.getElementById("myHeader");
+    var scrollHeight = window.pageYOffset;
+    var opacity = 1 - scrollHeight / 250; // change the denominator to control the speed of fading
 
-function scrollFunction() {
-    var topnav = document.getElementById("myTopnav");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         topnav.style.opacity = "0";
     } else {
         topnav.style.opacity = "1";
     }
-}
+
+    document.getElementById('scrollMessage').style.opacity = opacity;
+};
 
 // Function made from ChatGPT
 function copyCode() {
@@ -27,4 +28,3 @@ function copyCode() {
         document.getElementById("copyButton").innerText = "Copy Code";
     }, 3000);
 }
-

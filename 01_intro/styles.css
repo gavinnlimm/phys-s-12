@@ -21,28 +21,24 @@ body {
     display: inline-block;
     color: #333;
     text-align: center;
-    padding: 15px 15.5px;
+    padding: 15px 25px;
     text-decoration: none;
-    font-size: 14.75px;
+    font-size: 16px;
     white-space: nowrap;
+    transition: color 0.5s ease;
+    /* Add transition for color change on hover */
 }
 
 .topnav a:hover {
     color: #007BFF;
 }
 
-/* Add a class to change the opacity when scrolling down */
-.topnav.scroll-down {
-    opacity: 0.7;
-}
-
-
 .center {
     text-align: center;
 }
 
 #homePage {
-    padding: 240px 0;
+    padding: 230px 0;
 }
 
 #aboutPage {
@@ -108,11 +104,12 @@ div {
 
 
 .heading {
-    font-size: 50px;
+    font-size: 45px;
 }
 
 #darker {
     color: #777070;
+    font-size: 35px;
 }
 
 /* Start of Citation (Use of ChatGPT) */
@@ -166,7 +163,7 @@ div {
 }
 
 #title {
-    font-size: 60px;
+    font-size: 80px;
 }
 
 
@@ -194,3 +191,43 @@ div {
 #copyButton:active {
     background-color: #004d39;
 }
+
+#scrollMessage {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    color: #007BFF;
+    font-style: italic;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+    grid-gap: 20px; /* Adjust this for desired space between boxes */
+    padding: 20px; /* Add some padding around the container for better visuals */
+}
+
+.grid-item {
+    /* Styles for individual grid items if needed */
+}
+
+.box {
+    border: 1px solid #007BFF;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    color: #007BFF;
+    text-decoration: none;
+    width: 100%; /* Make the box fill the grid cell */
+    display: block;
+    border-radius: 20px;
+}
+
+.box:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
