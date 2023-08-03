@@ -14,7 +14,6 @@ body {
     justify-content: center;
     align-items: center;
     transition: opacity 0.5s ease;
-    /* Add a transition effect for smooth fading */
 }
 
 .topnav a {
@@ -26,7 +25,6 @@ body {
     font-size: 16px;
     white-space: nowrap;
     transition: color 0.5s ease;
-    /* Add transition for color change on hover */
 }
 
 .topnav a:hover {
@@ -37,22 +35,27 @@ body {
     text-align: center;
 }
 
+#center {
+    text-align: center;
+}
+
 #homePage {
     padding: 230px 0;
 }
 
 #aboutPage {
-    padding: 20px;
+    padding: 20px 20px 20px;
+    /* Adjust the padding-top value to increase the gap */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #333;
+    width: 50%;
+    /* Adjust this width based on your preference */
+    margin: 0 auto;
+    /* Center the element */
 }
 
-.imageShadow img {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-    /* Adding a subtle box shadow */
-}
-
+.imageShadow img,
 .imageShadow video {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
     /* Adding a subtle box shadow */
@@ -61,10 +64,6 @@ body {
 div {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-#center {
-    text-align: center;
 }
 
 .image {
@@ -90,7 +89,6 @@ div {
     max-width: 40%;
     height: auto;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-    /* Adding a subtle box shadow */
 }
 
 .subheading {
@@ -102,6 +100,12 @@ div {
     margin-bottom: 10px;
 }
 
+.subsubheading {
+    font-size: 21px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
 
 .heading {
     font-size: 45px;
@@ -127,6 +131,7 @@ div {
     max-width: 900px;
     overflow-x: auto;
     color: #f8f8f8;
+    position: relative;
 }
 
 .code-section code {
@@ -145,14 +150,11 @@ div {
 
 /* End of Citation */
 
-
-
-/* Style buttons */
 .btn {
     background-color: DodgerBlue;
     border: none;
     color: white;
-    padding: 12px 30px;
+    padding: 20px 40px;
     cursor: pointer;
     font-size: 17px;
 }
@@ -164,18 +166,20 @@ div {
 
 #title {
     font-size: 80px;
-}
-
-
-.code-section {
-    position: relative;
-    padding: 20px;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    /* Remove any default margin */
 }
 
 #copyButton {
     position: absolute;
-    top: 30px; /* adjust as needed */
-    right: 30px; /* adjust as needed */
+    top: 30px;
+    /* adjust as needed */
+    right: 30px;
+    /* adjust as needed */
     font-size: 1em;
     padding: 10px;
     color: #fff;
@@ -185,9 +189,11 @@ div {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 #copyButton:hover {
     background-color: #00664e;
 }
+
 #copyButton:active {
     background-color: #004d39;
 }
@@ -199,35 +205,41 @@ div {
     text-align: center;
     opacity: 1;
     transition: opacity 0.5s ease-out;
-    color: #007BFF;
     font-style: italic;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-    grid-gap: 20px; /* Adjust this for desired space between boxes */
+    grid-gap: 30px; /* Adjust this for desired space between boxes */
     padding: 20px; /* Add some padding around the container for better visuals */
-}
-
-.grid-item {
-    /* Styles for individual grid items if needed */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .box {
-    border: 1px solid #007BFF;
-    padding: 10px;
+    border: 2px solid #007BFF;
+    padding: 20px;
     text-align: center;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     color: #007BFF;
     text-decoration: none;
     width: 100%; /* Make the box fill the grid cell */
-    display: block;
+    height: 22vh; /* Set height to 80% of the viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border-radius: 20px;
+    font-size: 18px; /* Make the text a bit larger */
+    line-height: 24px; /* Control the spacing between lines of text */
+    box-sizing: border-box; /* Include padding and border in element's total height */
 }
-
 .box:hover {
     background-color: #007BFF;
     color: white;
+    transform: scale(1.05); /* Make the box grow a bit on hover */
 }
+
+
+
 
